@@ -38,7 +38,6 @@ public class PartOne {
 
     private static String getPuzzleInput() throws URISyntaxException, IOException {
         Path resourcePath = Paths.get(ClassLoader.getSystemResource("resources/day01/input.txt").toURI());
-        String puzzleInput = new String(Files.readAllBytes(resourcePath), StandardCharsets.UTF_8);
-        return puzzleInput;
+        return new String(Files.readAllBytes(resourcePath), StandardCharsets.UTF_8);
     }
 }
