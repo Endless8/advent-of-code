@@ -2,15 +2,13 @@ package main.day01;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PartOne {
 
-    public static void main(String[] args) throws IOException, URISyntaxException {
-        String puzzleInput = getPuzzleInput();
+    public static void main(String[] args) {
+        String puzzleInput = Utility.getPuzzleInput();
 
         int sum = calculateCalibrationValueSum(puzzleInput);
 
@@ -20,24 +18,10 @@ public class PartOne {
     private static int calculateCalibrationValueSum(String puzzleInput) {
         int sum = 0;
 
-        for (String line : puzzleInput.split("\n")) {
-            StringBuilder stringBuilder = new StringBuilder();
-
-            for (String character : line.split(""))
-                if (character.matches("\\d"))
-                    stringBuilder.append(character);
-
-            String firstNumber = String.valueOf(stringBuilder.charAt(0));
-            String lastNumber = String.valueOf(stringBuilder.charAt(stringBuilder.length() - 1));
-            String calibrationValue = firstNumber.concat(lastNumber);
-            sum += Integer.parseInt(calibrationValue);
-        }
+        for (String line : puzzleInput.split("\n"))
+            sum = Utility.getSum(sum, line);
 
         return sum;
     }
 
-    private static String getPuzzleInput() throws URISyntaxException, IOException {
-        Path resourcePath = Paths.get(ClassLoader.getSystemResource("resources/day01/input.txt").toURI());
-        return new String(Files.readAllBytes(resourcePath), StandardCharsets.UTF_8);
-    }
 }
