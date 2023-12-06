@@ -1,14 +1,11 @@
 package main.day01;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import main.Utility;
 
 public class PartOne {
 
     public static void main(String[] args) {
-        String puzzleInput = Utility.getPuzzleInput();
+        String puzzleInput = Utility.getPuzzleInput("resources/day01/input.txt");
 
         int sum = calculateCalibrationValueSum(puzzleInput);
 
@@ -19,7 +16,7 @@ public class PartOne {
         int sum = 0;
 
         for (String line : puzzleInput.split("\n"))
-            sum = Utility.getSum(sum, line);
+            sum = Common.getSum(sum, line);
 
         return sum;
     }

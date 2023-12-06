@@ -1,12 +1,14 @@
 package main.day01;
 
+import main.Utility;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PartTwo {
 
     public static void main(String[] args) {
-        String puzzleInput = Utility.getPuzzleInput();
+        String puzzleInput = Utility.getPuzzleInput("resources/day01/input.txt");
 
         int sum = calculateCalibrationValueSum(puzzleInput);
 
@@ -18,7 +20,7 @@ public class PartTwo {
 
         for (String line : puzzleInput.split("\n")) {
             line = restoreNumberFormat(line);
-            sum = Utility.getSum(sum, line);
+            sum = Common.getSum(sum, line);
         }
 
         return sum;
@@ -43,7 +45,7 @@ public class PartTwo {
         return result.toString();
     }
 
-    static String wordToNumber(String word) {
+    private static String wordToNumber(String word) {
         return switch (word) {
             case "zero" -> "0";
             case "one" -> "1";
