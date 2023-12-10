@@ -5,7 +5,7 @@ import main.Utility;
 public class PartOne {
 
     public static void main(String[] args) {
-        String puzzleInput = Utility.getPuzzleInput("resources/day01/input.txt");
+        String puzzleInput = Utility.getPuzzleInput("resources/day01-input.txt");
 
         int sum = calculateCalibrationValueSum(puzzleInput);
 

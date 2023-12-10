@@ -8,7 +8,7 @@ import java.util.Map;
 public class PartTwo {
 
     public static void main(String[] args) {
-        String puzzleInput = Utility.getPuzzleInput("resources/day02/input.txt");
+        String puzzleInput = Utility.getPuzzleInput("resources/day02-input.txt");
 
         Map<Integer, List<Map<String, Integer>>> gamesInformation = main.day02.Common.getGamesInformation(puzzleInput);
 

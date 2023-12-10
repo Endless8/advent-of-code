@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class PartTwo {
 
     public static void main(String[] args) {
-        String puzzleInput = Utility.getPuzzleInput("resources/day01/input.txt");
+        String puzzleInput = Utility.getPuzzleInput("resources/day01-input.txt");
 
         int sum = calculateCalibrationValueSum(puzzleInput);
 
